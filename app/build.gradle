@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 def cfg = rootProject.ext.configuration // 配置
 def libs = rootProject.ext.libraries // 库
@@ -21,6 +22,10 @@ android {
     }
 }
 
+greendao {
+    schemaVersion 1
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.android.support:appcompat-v7:${libs.support}"
@@ -28,4 +33,8 @@ dependencies {
     testImplementation "junit:junit:${libs.junit}"
     androidTestImplementation "com.android.support.test:runner:${libs.runner}"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:${libs.espresso}"
+
+    // 第三方库
+    implementation "org.greenrobot:greendao:${libs.greendao}"
+
 }
