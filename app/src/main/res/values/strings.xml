@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">GreenDAOLearn</string>
+
+    <string name="player_label">NBA Players</string>
+
+    <string name="btn_insert">insert</string>
+
+    <string name="edit_name">name:</string>
+    <string name="edit_age">age: </string>
+    <string name="edit_champion">champion: </string>
+
+    <string name="player_age">age: %1$d</string>
+    <string name="player_champion">champion: %1$d</string>
+
+    <string name="delete_alert_tips">Confirm Delete?</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
 </resources>

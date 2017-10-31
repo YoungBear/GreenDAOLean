@@ -36,5 +36,8 @@ dependencies {
 
     // 第三方库
     implementation "org.greenrobot:greendao:${libs.greendao}"
+    implementation "com.jakewharton:butterknife:${libs.butterknife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${libs.butterknife}"
+    implementation "com.android.support:recyclerview-v7:${libs.support}"
 
 }
