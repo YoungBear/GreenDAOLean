@@ -18,10 +18,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ysx.greendaolearn.adapter.PlayerAdapter;
-import com.ysx.greendaolearn.entity.DaoMaster;
 import com.ysx.greendaolearn.entity.DaoSession;
 import com.ysx.greendaolearn.entity.Player;
 import com.ysx.greendaolearn.entity.PlayerDao;
+import com.ysx.greendaolearn.manager.GreenDaoManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,10 +52,6 @@ public class MainActivity extends AppCompatActivity {
     private PlayerAdapter mAdapter;
     private Context mContext;
 
-    /**
-     * 数据库名称
-     */
-    private static final String DATABASE_NAME = "players.db";
     private DaoSession mDaoSession;
 
     @Override
@@ -121,16 +117,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     /**
-     * 初始化DaoSession
-     * 即获取一个全局的DaoSession实例
-     * // TODO: 2017/10/31 可以使用一个单例类单独管理这个对象
+     * 获取一个全局的DaoSession实例
      */
     private void initDaoSession() {
-        DaoMaster.OpenHelper openHelper = new DaoMaster.DevOpenHelper(
-                mContext.getApplicationContext(), DATABASE_NAME, null);
-        DaoMaster daoMaster = new DaoMaster(openHelper.getWritableDatabase());
-        mDaoSession = daoMaster.newSession();
+        mDaoSession = GreenDaoManager.getInstance().getDaoSession();
     }
 
     /**
