@@ -409,6 +409,8 @@ public class MyApplication extends Application {
 
 # [Demo源代码地址][6]
 
+[GreenDaoUpgradeHelper地址][8]
+
 # 参考
 
 http://blog.csdn.net/zone_/article/details/69054997
@@ -423,3 +425,4 @@ http://blog.csdn.net/njweiyukun/article/details/51893092
   [5]: http://img.blog.csdn.net/20171031192043622?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTmV4dF9TZWNvbmQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast
   [6]: https://github.com/YoungBear/GreenDAOLean
   [7]: http://img.blog.csdn.net/20171103000530238?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTmV4dF9TZWNvbmQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast
+  [8]: https://github.com/yuweiguocn/GreenDaoUpgradeHelper
