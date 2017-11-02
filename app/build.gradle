@@ -23,7 +23,7 @@ android {
 }
 
 greendao {
-    schemaVersion 1
+    schemaVersion 2
 }
 
 dependencies {
@@ -39,5 +39,5 @@ dependencies {
     implementation "com.jakewharton:butterknife:${libs.butterknife}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${libs.butterknife}"
     implementation "com.android.support:recyclerview-v7:${libs.support}"
-
+    implementation "com.github.yuweiguocn:GreenDaoUpgradeHelper:${libs.GreenDaoUpgradeHelper}"
 }

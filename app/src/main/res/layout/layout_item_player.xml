@@ -37,4 +37,15 @@
         android:textColor="@color/item_tv_sub_text_color"
         android:textSize="@dimen/item_tv_sub_text_size" />
 
+    <TextView
+        android:id="@+id/tv_champion"
+        android:layout_width="@dimen/item_tv_champion_width"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/tv_age"
+        android:layout_below="@id/tv_age"
+        android:layout_marginTop="@dimen/item_tv_champion_margin_top"
+        android:gravity="center"
+        android:textColor="@color/item_tv_sub_text_color"
+        android:textSize="@dimen/item_tv_sub_text_size" />
+
 </RelativeLayout>

@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  * @description
  */
 
-public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder>{
+public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder> {
     private static final String TAG = "PlayerAdapter";
 
     private OnItemClickListener mOnItemClickListener;
@@ -46,6 +46,9 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         holder.mTvName.setText(player.getName());
         holder.mTvId.setText(String.valueOf(player.getId()));
         holder.mTvAge.setText(mContext.getString(R.string.player_age, player.getAge()));
+
+        holder.mTvChampion.setText(mContext.getString(R.string.player_champion, player.getChampion()));
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,6 +86,8 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         TextView mTvId;
         @BindView(R.id.tv_age)
         TextView mTvAge;
+        @BindView(R.id.tv_champion)
+        TextView mTvChampion;
 
         public ViewHolder(View itemView) {
             super(itemView);

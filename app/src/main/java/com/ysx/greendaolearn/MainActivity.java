@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     EditText mEtName;
     @BindView(R.id.et_age)
     EditText mEtAge;
+    @BindView(R.id.et_champion)
+    EditText mEtChampion;
     @BindView(R.id.btn_insert)
     Button mBtnInsert;
     @BindView(R.id.recycler_view)
@@ -161,18 +163,21 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 更新一条数据
      * 更新年龄
+     * 更新冠军数
      *
      * @param id
      * @param age
+     * @param chamption
      */
-    private void updateData(long id, int age) {
-        Log.d(TAG, "updateData: id: " + id + ", age: " + age);
+    private void updateData(long id, int age, int chamption) {
+        Log.d(TAG, "updateData: id: " + id + ", age: " + age + ", champion: " + chamption);
         PlayerDao playerDao = mDaoSession.getPlayerDao();
         Player player = playerDao.queryBuilder()
                 .where(PlayerDao.Properties.Id.eq(id))
                 .build()
                 .unique();
         player.setAge(age);
+        player.setChampion(chamption);
         playerDao.update(player);
     }
 
@@ -182,13 +187,17 @@ public class MainActivity extends AppCompatActivity {
     private void addPlayer() {
         String name = mEtName.getText().toString();
         String ageString = mEtAge.getText().toString();
+        String championString = mEtChampion.getText().toString();
         if (TextUtils.isEmpty(name)) {
             Toast.makeText(mContext, "please input name", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(ageString)) {
             Toast.makeText(mContext, "please input age", Toast.LENGTH_SHORT).show();
-        }else {
+        } else if (TextUtils.isEmpty(championString)) {
+            Toast.makeText(mContext, "please input champion", Toast.LENGTH_SHORT).show();
+        } else {
             int age = Integer.parseInt(ageString);
-            addPlayer(name, age);
+            int champion = Integer.parseInt(championString);
+            addPlayer(name, age, champion);
         }
     }
 
@@ -197,8 +206,9 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param name
      * @param age
+     * @param champion
      */
-    private void addPlayer(String name, int age) {
+    private void addPlayer(String name, int age, int champion) {
         Log.d(TAG, "addUser: name: " + name + ", age: " + age);
 
         PlayerDao playerDao = mDaoSession.getPlayerDao();
@@ -211,11 +221,12 @@ public class MainActivity extends AppCompatActivity {
          * 否则直接插入
          */
         if (playerOld != null) {
-            updateData(playerOld.getId(), age);
+            updateData(playerOld.getId(), age, champion);
         } else {
             Player player = new Player();
             player.setName(name);
             player.setAge(age);
+            player.setChampion(champion);
             insertData(player);
         }
         loadData();

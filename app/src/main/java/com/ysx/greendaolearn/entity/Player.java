@@ -18,11 +18,13 @@ public class Player {
     @Unique
     private String name;
     private Integer age;
-    @Generated(hash = 1461101279)
-    public Player(Long id, String name, Integer age) {
+    private int champion;
+    @Generated(hash = 968440139)
+    public Player(Long id, String name, Integer age, int champion) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.champion = champion;
     }
     @Generated(hash = 30709322)
     public Player() {
@@ -45,4 +47,12 @@ public class Player {
     public void setAge(Integer age) {
         this.age = age;
     }
+    public int getChampion() {
+        return this.champion;
+    }
+    public void setChampion(int champion) {
+        this.champion = champion;
+    }
+
+
 }
