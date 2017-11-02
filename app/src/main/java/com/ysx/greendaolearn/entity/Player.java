@@ -18,9 +18,9 @@ public class Player {
     @Unique
     private String name;
     private Integer age;
-    private int champion;
-    @Generated(hash = 968440139)
-    public Player(Long id, String name, Integer age, int champion) {
+    private Integer champion;
+    @Generated(hash = 1861714714)
+    public Player(Long id, String name, Integer age, Integer champion) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -47,10 +47,10 @@ public class Player {
     public void setAge(Integer age) {
         this.age = age;
     }
-    public int getChampion() {
+    public Integer getChampion() {
         return this.champion;
     }
-    public void setChampion(int champion) {
+    public void setChampion(Integer champion) {
         this.champion = champion;
     }
 

@@ -47,7 +47,12 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         holder.mTvId.setText(String.valueOf(player.getId()));
         holder.mTvAge.setText(mContext.getString(R.string.player_age, player.getAge()));
 
-        holder.mTvChampion.setText(mContext.getString(R.string.player_champion, player.getChampion()));
+        if (player.getChampion() == null) {
+            holder.mTvChampion.setVisibility(View.GONE);
+        } else {
+            holder.mTvChampion.setVisibility(View.VISIBLE);
+            holder.mTvChampion.setText(mContext.getString(R.string.player_champion, player.getChampion()));
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
